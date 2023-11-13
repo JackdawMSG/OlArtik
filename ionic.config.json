@@ -1,0 +1,7 @@
+{
+  "name": "OlArtik",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
