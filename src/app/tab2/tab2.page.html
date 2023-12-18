@@ -1,17 +1,66 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Tab 2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center"> Üye Ol</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-input label="Adınızı Giriniz" placeholder="örn: Ahmet"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Soyadınızı Giriniz"
+        placeholder="örn: Yıldırım"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="Email_Signup"
+        label="Email Giriniz"
+        type="email"
+        placeholder="email@domain.com"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="Password_Signup"
+        label="Şifre Giriniz"
+        type="password"
+        value="password"
+        placeholder="********"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="Password_Signup_Confirm"
+        label="Şifrenizi Doğrulayın"
+        type="password"
+        value="password"
+        placeholder="********"
+      ></ion-input>
+    </ion-item>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-item>
+      <ion-input
+        label="Telephone input"
+        type="tel"
+        placeholder="888-888-8888"
+      ></ion-input>
+    </ion-item>
+    <ion-spinner style="text-align: left; float: left"></ion-spinner>
+    <div class="sagkaydir">
+      <ion-button
+        (click)="print_email_signup()"
+        (click)="print_password_signup()"
+        style="float: right; padding-right: 1%"
+        fill="outline"
+        >Üye Ol</ion-button
+      >
+    </div>
+  </ion-card>
 </ion-content>
