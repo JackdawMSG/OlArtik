@@ -5,68 +5,158 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card class="product_list">
-    <ion-list>
-      <ion-item
-        ><img
-          alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
-          width="100"
-          height="100"
-        /><ion-label>Right Wing Jeans</ion-label><ion-label> $29.99</ion-label
-        ><ion-button style="float: right; padding-right: 3px" fill="solid"
-          >Satın Al</ion-button
-        >
-      </ion-item>
-      <ion-item
-        ><img
-          alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
-          width="100"
-          height="100"
-        /><ion-label>Right Wing Jeans Pro</ion-label
-        ><ion-label>$29.99</ion-label>
-        <ion-button style="float: right; padding-right: 3px" fill="solid"
-          >Satın Al</ion-button
-        ></ion-item
+  <ion-card class="page-title">
+    <img
+      alt="Silhouette of mountains"
+      src="https://ionicframework.com/docs/img/demos/card-media.png"
+      width="500"
+      height="450"
+    />
+    <ion-card-header>
+      <ion-card-title>Wellcome To Jeans&Sweats</ion-card-title>
+      <ion-card-subtitle
+        style="
+          text-align: left;
+          font-weight: 100;
+          font-size: 16px;
+          font-family: 'Times New Roman', Times, serif;
+
+          color: white;
+        "
+        >Disobey The Liberal Mindset With Our Products!<br />
+        <b style="text-align: center">
+          America! Hell Yeah!</b
+        ></ion-card-subtitle
       >
-      <ion-item
-        ><img
-          alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
-          width="100"
-          height="100"
-        /><ion-label>Right Wing Jeans Extreme Trump Model</ion-label
-        ><ion-label>$29.99</ion-label>
-        <ion-button style="float: right; padding-right: 3px" fill="solid"
-          >Satın Al</ion-button
-        ></ion-item
-      >
-      <ion-item
-        ><img
-          alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
-          width="100"
-          height="100"
-        /><ion-label>Freedom Model-2024 Sweats</ion-label
-        ><ion-label>$39.99</ion-label>
-        <ion-button style="float: right; padding-right: 3px" fill="solid"
-          >Satın Al</ion-button
-        ></ion-item
-      >
-      <ion-item
-        ><img
-          alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
-          width="100"
-          height="100"
-        /><ion-label
-          >Bring Your Truck With Ya! Sweats(Extreme Right Wing Model)</ion-label
-        ><ion-label>$39.99</ion-label>
-        <ion-button style="float: right; padding-right: 3px" fill="solid"
-          >Satın Al</ion-button
-        ></ion-item
-      >
-    </ion-list>
+    </ion-card-header>
   </ion-card>
+  <ion-accordion-group class="tsli-deneme">
+    <ion-accordion *ngFor="let p of products_jeans " [value]="p.name">
+      <ion-item slot="header" color="light">
+        <ion-label>{{p.name}}</ion-label>
+      </ion-item>
+
+      <div class="ion-padding" slot="content">
+        <ion-card>
+          <img
+            alt="Silhouette of mountains"
+            [src]="p.source"
+            height="75"
+            width="75"
+          />
+          <ion-card-header>
+            <ion-card-title>{{p.name}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content> {{p.description}} </ion-card-content>
+          <ion-card-subtitle>{{p.price}}</ion-card-subtitle>
+        </ion-card>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-accordion-group class="list-product">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Jeans</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item style="margin-top: 2px; margin-bottom: 4px"
+          ><img
+            alt="Silhouette of mountains"
+            src="https://ionicframework.com/docs/img/demos/card-media.png"
+            width="100"
+            height="100"
+            style="
+              border: solid 3px rgb(200, 200, 200);
+              border-radius: 20% 20% 20% 20%;
+              box-sizing: border-box;
+            "
+          /><ion-label style="padding-left: 4px">Right Wing Jeans</ion-label
+          ><ion-button style="float: right; padding-right: 3px" fill="solid">
+            $29.99<br />Satın Al</ion-button
+          >
+        </ion-item>
+        <ion-item style="margin-top: 4px; margin-bottom: 4px"
+          ><img
+            alt="Silhouette of mountains"
+            src="https://ionicframework.com/docs/img/demos/card-media.png"
+            width="100"
+            height="100"
+            style="
+              border: solid 3px rgb(200, 200, 200);
+              border-radius: 20% 20% 20% 20%;
+              box-sizing: border-box;
+            "
+          /><ion-label style="padding-left: 4px"
+            >Right Wing Jeans Pro</ion-label
+          >
+          <ion-button style="float: right; padding-right: 3px" fill="solid"
+            >$29.99 <br />Satın Al</ion-button
+          ></ion-item
+        >
+        <ion-item style="margin-top: 4px; margin-bottom: 4px"
+          ><img
+            alt="Silhouette of mountains"
+            src="https://ionicframework.com/docs/img/demos/card-media.png"
+            width="100"
+            height="100"
+            style="
+              border: solid 3px rgb(200, 200, 200);
+              border-radius: 20% 20% 20% 20%;
+              box-sizing: border-box;
+            "
+          /><ion-label style="padding-left: 4px"
+            >Right Wing Jeans Extreme Trump Model</ion-label
+          >
+          <ion-button style="float: right; padding-right: 3px" fill="solid"
+            >$29.99<br />Satın Al</ion-button
+          ></ion-item
+        >
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Sweats</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item style="margin-top: 4px; margin-bottom: 4px"
+          ><img
+            alt="Silhouette of mountains"
+            src="https://ionicframework.com/docs/img/demos/card-media.png"
+            width="100"
+            height="100"
+            style="
+              border: solid 3px rgb(200, 200, 200);
+              border-radius: 20% 20% 20% 20%;
+              box-sizing: border-box;
+            "
+          /><ion-label style="padding-left: 4px"
+            >Freedom Model-2024 Sweats</ion-label
+          >
+          <ion-button style="float: right; padding-right: 3px" fill="solid"
+            >$39.99<br />Satın Al</ion-button
+          ></ion-item
+        >
+        <ion-item style="margin-top: 4px"
+          ><img
+            alt="Silhouette of mountains"
+            src="https://ionicframework.com/docs/img/demos/card-media.png"
+            width="100"
+            height="100"
+            style="
+              border: solid 3px rgb(200, 200, 200);
+              border-radius: 20% 20% 20% 20%;
+              box-sizing: border-box;
+            "
+          /><ion-label style="padding-left: 4px"
+            >Bring Your Truck With Ya! Sweats(Extreme Right Wing
+            Model)</ion-label
+          >
+          <ion-button style="float: right; padding-right: 3px" fill="solid"
+            >$39.99<br />Satın Al</ion-button
+          ></ion-item
+        >
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
